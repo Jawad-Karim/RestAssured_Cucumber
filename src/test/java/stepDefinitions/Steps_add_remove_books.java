@@ -31,7 +31,7 @@ public class Steps_add_remove_books {
 		RequestSpecification request = RestAssured.given();
 
 		request.header("Content-Type", "application/json");
-		response = request.body("{ \"userName\":\"" + USERNAME + "\", \"password\":\"" + PASSWORD + "\"}")
+		response = request.body("{ \"userName\":\" "+USERNAME+" \", \"password\":\" "+PASSWORD+" \"}")
 				.post("/Account/v1/GenerateToken");
 
 		String jsonString = response.asString();
@@ -89,7 +89,7 @@ public class Steps_add_remove_books {
 		request.header("Authorization", "Bearer " + token)
 		.header("Content-Type", "application/json");
 
-		response = request.body("{ \"isbn\": \"" + bookId + "\", \"userId\": \"" + USER_ID + "\"}")
+		response = request.body("{ \"isbn\": \" "+bookId+" \", \"userId\": \" "+USER_ID+" \"}")
 				.delete("/BookStore/v1/Book");
 
 
